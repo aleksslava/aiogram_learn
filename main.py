@@ -17,6 +17,7 @@ async def main():
     logger.info('Starting Bot')
 
     config: Config = load_config()
+    print(config.tg_bot.token)
 
     bot = Bot(token=config.tg_bot.token,
               parse_mode='HTML')
@@ -26,8 +27,7 @@ async def main():
     dp.include_router(user_handlers.router)
     dp.include_router(other_handlers.router)
 
-    await bot.delete_webhook(drop_pending_updates=True)
-    await  dp.start_polling(bot)
+    await dp.start_polling(bot)
 
 asyncio.run(main())
 
