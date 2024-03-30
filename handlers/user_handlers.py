@@ -1,9 +1,10 @@
 from aiogram import F, Router
 from aiogram.filters import Command, CommandStart
 from aiogram.types import Message
-from keyboards.keyboards import game_kb, yes_no_kb
+from keyboards.keyboards import game_kb, yes_no_kb, url_keyboard, clbk_keyboard
 from lexicon.lexicon_ru import LEXICON_RU
 from services.services import get_bot_choice, get_winner
+
 
 router = Router()
 

@@ -1,4 +1,4 @@
-from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.utils.keyboard import ReplyKeyboardBuilder
 
 from lexicon.lexicon_ru import LEXICON_RU
@@ -29,4 +29,19 @@ game_kb = ReplyKeyboardMarkup(
     resize_keyboard=True
 
 )
+
+url_button = InlineKeyboardButton(text='Ссылка на что-то', url='Https://www.google.com')
+
+url_keyboard = InlineKeyboardMarkup(inline_keyboard=[[url_button]])
+
+clbk_button_1 = InlineKeyboardButton(text='Коллбэк_1',
+                                     callback_data='clbk_1')
+
+clbk_button_2 = InlineKeyboardButton(text='Коллбэк_2',
+                                     callback_data='clbk_2')
+
+clbk_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [clbk_button_1],
+    [clbk_button_2]
+])
 
